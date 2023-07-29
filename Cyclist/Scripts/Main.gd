@@ -1,8 +1,8 @@
 extends Node2D
 
-var speed: float = 0.0001
+var speed: float = 0.0
 var speed_max: float = 0.06
-var speed_increment: float = 0.001
+var speed_increment: float = 0.0065
 
 var enemy_speed: float = 0.05
 var enemy_max_speed: float = 0.07
@@ -119,7 +119,7 @@ func _process(delta):
 	main_tween.tween_property(main, "modulate", Color(1,1,1), 2)
 	main_tween.tween_property(game_music_audio, "volume_db", 4.364, 2)
 	
-	speed -= 0.1 * delta
+	speed -= 0.001
 	
 	# limit
 	speed = min(speed, speed_max)
@@ -146,9 +146,9 @@ func _process(delta):
 					timer_label.text = get_time()
 				
 				if sonic_mode:
-					speed += 1.5
-					player.rotation_degrees += 5
-					hat_sprite.rotation_degrees += 5
+					speed += 2.0
+					player.rotation_degrees += 1800 * delta
+					hat_sprite.rotation_degrees += 1800 * delta
 					can_time_run = true
 					
 					sonic_music_audio.stream_paused = false
@@ -324,7 +324,6 @@ func _on_back_shops_button_pressed():
 	change_screen(shops_state, menu_state)
 	start_button.grab_focus()
 
-
 func _on_game_music_audio_finished():
 	game_music_audio.play()
 
@@ -341,7 +340,7 @@ func _on_pepe_buy_button_pressed():
 		if upgrade_pepe:
 			upgrade_pepe = false
 			coin -= 10
-			speed_increment = 0.01
+			speed_increment = 0.010
 			update_coin_label()
 			update_price_label()
 			button_select_audio.play()
@@ -363,7 +362,7 @@ func _on_rock_buy_button_pressed():
 		if upgrade_rock:
 			upgrade_rock = false
 			coin -= 20
-			speed_max = 0.1
+			speed_max = 0.4
 			update_coin_label()
 			update_price_label()
 			button_select_audio.play()
@@ -384,8 +383,6 @@ func _on_sonic_buy_button_pressed():
 		if upgrade_sonic:
 			upgrade_sonic = false
 			coin -= 30
-			speed_max = 1
-			speed_increment = 1
 			update_coin_label()
 			update_price_label()
 			button_select_audio.play()

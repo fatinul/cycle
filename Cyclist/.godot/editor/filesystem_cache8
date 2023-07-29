@@ -1,0 +1,64 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1690661733
+default_bus_layout.tres::AudioBusLayout::1741379787098821669::1690661633::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1690661633::0::1::::<><>::
+icon.svg::CompressedTexture2D::7653191834451582373::1690661633::1690661734::1::::<><>::
+::res://Audios/::1690661633
+Blip_select 7.wav::AudioStreamWAV::8566533430413679865::1690661633::1690661735::1::::<><>::
+click.mp3::AudioStreamMP3::27390147805597377::1690661633::1690661734::1::::<><>::
+countdown.mp3::AudioStreamMP3::767005807184607883::1690661633::1690661734::1::::<><>::
+Game_run.mp3::AudioStreamMP3::8525470650336519002::1690661633::1690661734::1::::<><>::
+gaming-sound-143716.mp3::AudioStreamMP3::900246705058002355::1690661633::1690661734::1::::<><>::
+hat_select.wav::AudioStreamWAV::1270658740523092591::1690661633::1690661735::1::::<><>::
+lock.wav::AudioStreamWAV::7412928718966232743::1690661633::1690661735::1::::<><>::
+lose.mp3::AudioStreamMP3::5835795510313000871::1690661633::1690661734::1::::<><>::
+Pickup_coin 10.wav::AudioStreamWAV::8131313989913792195::1690661633::1690661735::1::::<><>::
+Pickup_coin 11.wav::AudioStreamWAV::2360889875751947706::1690661633::1690661735::1::::<><>::
+sonic_music_audio.mp3::AudioStreamMP3::2014672261923413853::1690661633::1690661734::1::::<><>::
+victory-electronic-video-game-soundtrack-denouement-credits-153944.mp3::AudioStreamMP3::1316884926083145872::1690661633::1690661734::1::::<><>::
+winsquare-6993.mp3::AudioStreamMP3::4198029728934079978::1690661633::1690661734::1::::<><>::
+::res://Font/::1690661633
+Early GameBoy.ttf::FontFile::5123823315807711152::1690661633::1690661734::1::::<><>::
+::res://Graphics/::1690661633
+Banner.png::CompressedTexture2D::4788979879473310854::1690661633::1690661734::1::::<><>::
+coins.png::CompressedTexture2D::4357832567423535854::1690661633::1690661734::1::::<><>::
+Gameboy.png::CompressedTexture2D::1073250412629076656::1690661633::1690661734::1::::<><>::
+game_logo.png::CompressedTexture2D::9105593564075702679::1690661633::1690661734::1::::<><>::
+green_screen.png::CompressedTexture2D::3536524134550185085::1690661633::1690661734::1::::<><>::
+lose.png::CompressedTexture2D::4333121819701131606::1690661633::1690661734::1::::<><>::
+menu_logo.png::CompressedTexture2D::697620265738982335::1690661633::1690661734::1::::<><>::
+player.png::CompressedTexture2D::7666243072816290011::1690661633::1690661734::1::::<><>::
+thanks.png::CompressedTexture2D::2800324984520066130::1690661633::1690661734::1::::<><>::
+thank_youu_message.png::CompressedTexture2D::9077176300993315510::1690661633::1690661734::1::::<><>::
+track.png::CompressedTexture2D::7005441254350196909::1690661633::1690661734::1::::<><>::
+white_dot.png::CompressedTexture2D::9071508313369242536::1690661633::1690661734::1::::<><>::
+win.png::CompressedTexture2D::994420574656221525::1690661633::1690661734::1::::<><>::
+::res://Graphics/accessories/::1690661633
+pepe.png::CompressedTexture2D::2564375124260824625::1690661633::1690661734::1::::<><>::
+rock.png::CompressedTexture2D::9163022436998208335::1690661633::1690661734::1::::<><>::
+sonic.png::CompressedTexture2D::5463960920922316716::1690661633::1690661734::1::::<><>::
+::res://Graphics/Buttons/::1690661633
+A_buttons1.png::CompressedTexture2D::4074851302508481601::1690661633::1690661734::1::::<><>::
+A_buttons2.png::CompressedTexture2D::4139868097227914412::1690661633::1690661734::1::::<><>::
+D_buttons1.png::CompressedTexture2D::8474787220717102027::1690661633::1690661734::1::::<><>::
+D_buttons2.png::CompressedTexture2D::6063595442554782596::1690661633::1690661734::1::::<><>::
+::res://Graphics/coins/::1690661633
+coins1.png::CompressedTexture2D::3880654389703165751::1690661633::1690661734::1::::<><>::
+coins2.png::CompressedTexture2D::7621929576384039805::1690661633::1690661734::1::::<><>::
+coins3.png::CompressedTexture2D::9044850601822196971::1690661633::1690661734::1::::<><>::
+coins4.png::CompressedTexture2D::3518461807005464501::1690661633::1690661734::1::::<><>::
+::res://Graphics/Cursor/::1690661633
+cursor.png::CompressedTexture2D::8016391170585068350::1690661633::1690661734::1::::<><>::
+::res://Graphics/light/::1690661633
+circle.png::CompressedTexture2D::5448058195510208494::1690661633::1690661734::1::::<><>::
+::res://Scenes/::1690661633
+main2.gdshader::Shader::-1::1690661633::0::1::::<><>::
+main.gdshader::Shader::-1::1690661633::0::1::::<><>::
+main.tscn::PackedScene::8623208434927069768::1690661633::0::1::::<><>::uid://pj5jo1s0vxcy::::res://Graphics/Gameboy.png<>res://Scripts/Main.gd<>uid://dhht5yjsxktnv::::res://Graphics/player.png<>uid://bqnebhnhmvahh::::res://Graphics/green_screen.png<>uid://byb5g8xi3efef::::res://Graphics/Buttons/A_buttons1.png<>uid://by8na1i7jpi5i::::res://Graphics/Buttons/A_buttons2.png<>uid://ds0iriqvebfnv::::res://Graphics/Buttons/D_buttons1.png<>uid://csnisb44gme0c::::res://Graphics/Buttons/D_buttons2.png<>uid://c62quguwunie4::::res://Graphics/track.png<>uid://cfaavel7olr1a::::res://Font/Early GameBoy.ttf<>uid://cj31vxu22gdc3::::res://Graphics/accessories/sonic.png<>uid://d2ikofsmo2ytk::::res://Graphics/white_dot.png<>uid://j66x6wijffox::::res://Graphics/menu_logo.png<>uid://bf5q7cr6gw4bm::::res://Graphics/thanks.png<>uid://cjiuchmobaxi::::res://Scenes/volume_slider.tscn<>uid://d2lb1dhiiios1::::res://Graphics/thank_youu_message.png<>uid://8vvrndb0isra::::res://Audios/Pickup_coin 11.wav<>uid://bcsg5bqprjly4::::res://Graphics/accessories/pepe.png<>res://Scenes/main.gdshader<>uid://dubxs3o6evpk8::::res://Audios/Blip_select 7.wav<>res://Scenes/map.gdshader<>uid://njd2fsknq46::::res://Audios/click.mp3<>uid://ofx7xt4gw60x::::res://Graphics/win.png<>uid://bvj22tk1i0y3x::::res://Graphics/coins/coins1.png<>uid://dtp2ix71lykac::::res://Audios/Game_run.mp3<>uid://dgueci6q0jdvp::::res://Graphics/coins/coins2.png<>uid://d14nmrlvhe81d::::res://Graphics/coins/coins3.png<>uid://k6sqdpyrwgdn::::res://Audios/countdown.mp3<>uid://bqems1agdkb4x::::res://Graphics/coins/coins4.png<>uid://3x6mfvh2s3w8::::res://Audios/sonic_music_audio.mp3<>uid://s055xdkp2au7::::res://Audios/victory-electronic-video-game-soundtrack-denouement-credits-153944.mp3<>uid://cjvcythqrger3::::res://Graphics/light/circle.png<>uid://b02s63mfxit3w::::res://Audios/winsquare-6993.mp3<>uid://cpe5x1stpjkv4::::res://Audios/lose.mp3<>uid://dn34s20ndqn5d::::res://Audios/Pickup_coin 10.wav<>uid://ddu44aaxy2q20::::res://Audios/lock.wav<>uid://sdrtf1a0a38n::::res://Audios/hat_select.wav
+map.gdshader::Shader::-1::1690661633::0::1::::<><>::
+volume_slider.tscn::PackedScene::159478655307137470::1690661633::0::1::::<><>::res://Scripts/volume_slider.gd
+::res://Scripts/::1690661633
+Main.gd::GDScript::-1::1690661633::0::1::::<>Node2D<>::
+main.gdshader::Shader::-1::1690661633::0::1::::<><>::
+Map.gd::GDScript::-1::1690661633::0::1::::<>Node2D<>::
+volume_slider.gd::GDScript::-1::1690661633::0::1::::<>HSlider<>::
