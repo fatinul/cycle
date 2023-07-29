@@ -1,0 +1,780 @@
+[gd_scene load_steps=63 format=3 uid="uid://du4e8oocdksng"]
+
+[ext_resource type="Texture2D" uid="uid://pj5jo1s0vxcy" path="res://Graphics/Gameboy.png" id="1_010og"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_hpg8s"]
+[ext_resource type="Texture2D" uid="uid://dhht5yjsxktnv" path="res://Graphics/player.png" id="2_4lqqo"]
+[ext_resource type="Texture2D" uid="uid://bqnebhnhmvahh" path="res://Graphics/green_screen.png" id="2_paa7f"]
+[ext_resource type="Texture2D" uid="uid://byb5g8xi3efef" path="res://Graphics/Buttons/A_buttons1.png" id="3_nts3u"]
+[ext_resource type="Texture2D" uid="uid://by8na1i7jpi5i" path="res://Graphics/Buttons/A_buttons2.png" id="4_8aosj"]
+[ext_resource type="Texture2D" uid="uid://ds0iriqvebfnv" path="res://Graphics/Buttons/D_buttons1.png" id="5_5noeo"]
+[ext_resource type="Texture2D" uid="uid://csnisb44gme0c" path="res://Graphics/Buttons/D_buttons2.png" id="6_ko47y"]
+[ext_resource type="Texture2D" uid="uid://c62quguwunie4" path="res://Graphics/track.png" id="8_1ji2o"]
+[ext_resource type="FontFile" uid="uid://cfaavel7olr1a" path="res://Font/Early GameBoy.ttf" id="8_2fvkg"]
+[ext_resource type="Texture2D" uid="uid://cj31vxu22gdc3" path="res://Graphics/accessories/sonic.png" id="8_83nnf"]
+[ext_resource type="Texture2D" uid="uid://d2ikofsmo2ytk" path="res://Graphics/white_dot.png" id="9_lvsw2"]
+[ext_resource type="Texture2D" uid="uid://j66x6wijffox" path="res://Graphics/menu_logo.png" id="11_k4j2j"]
+[ext_resource type="Texture2D" uid="uid://bf5q7cr6gw4bm" path="res://Graphics/thanks.png" id="12_xcagl"]
+[ext_resource type="PackedScene" uid="uid://cjiuchmobaxi" path="res://Scenes/volume_slider.tscn" id="13_c5q7b"]
+[ext_resource type="Texture2D" uid="uid://d2lb1dhiiios1" path="res://Graphics/thank_youu_message.png" id="13_ehtoi"]
+[ext_resource type="AudioStream" uid="uid://8vvrndb0isra" path="res://Audios/Pickup_coin 11.wav" id="13_fex6t"]
+[ext_resource type="Texture2D" uid="uid://bcsg5bqprjly4" path="res://Graphics/accessories/pepe.png" id="14_0kh6m"]
+[ext_resource type="Shader" path="res://Scenes/main.gdshader" id="14_w3pf1"]
+[ext_resource type="AudioStream" uid="uid://dubxs3o6evpk8" path="res://Audios/Blip_select 7.wav" id="14_wvxyw"]
+[ext_resource type="Shader" path="res://Scenes/map.gdshader" id="15_lekgd"]
+[ext_resource type="AudioStream" uid="uid://njd2fsknq46" path="res://Audios/click.mp3" id="15_n2o3l"]
+[ext_resource type="Texture2D" uid="uid://ofx7xt4gw60x" path="res://Graphics/win.png" id="17_j4h34"]
+[ext_resource type="Texture2D" uid="uid://bvj22tk1i0y3x" path="res://Graphics/coins/coins1.png" id="18_wfxku"]
+[ext_resource type="AudioStream" uid="uid://dtp2ix71lykac" path="res://Audios/Game_run.mp3" id="19_bimdp"]
+[ext_resource type="Texture2D" uid="uid://dgueci6q0jdvp" path="res://Graphics/coins/coins2.png" id="19_qutbs"]
+[ext_resource type="Texture2D" uid="uid://d14nmrlvhe81d" path="res://Graphics/coins/coins3.png" id="20_c4tbw"]
+[ext_resource type="AudioStream" uid="uid://k6sqdpyrwgdn" path="res://Audios/countdown.mp3" id="20_qltv4"]
+[ext_resource type="Texture2D" uid="uid://bqems1agdkb4x" path="res://Graphics/coins/coins4.png" id="21_8upve"]
+[ext_resource type="AudioStream" uid="uid://3x6mfvh2s3w8" path="res://Audios/sonic_music_audio.mp3" id="21_eqj5o"]
+[ext_resource type="AudioStream" uid="uid://s055xdkp2au7" path="res://Audios/victory-electronic-video-game-soundtrack-denouement-credits-153944.mp3" id="22_dto60"]
+[ext_resource type="Texture2D" uid="uid://cjvcythqrger3" path="res://Graphics/light/circle.png" id="22_r0xbo"]
+[ext_resource type="AudioStream" uid="uid://b02s63mfxit3w" path="res://Audios/winsquare-6993.mp3" id="22_ue8ho"]
+[ext_resource type="AudioStream" uid="uid://cpe5x1stpjkv4" path="res://Audios/lose.mp3" id="23_5xktr"]
+[ext_resource type="AudioStream" uid="uid://dn34s20ndqn5d" path="res://Audios/Pickup_coin 10.wav" id="24_7id2a"]
+[ext_resource type="AudioStream" uid="uid://ddu44aaxy2q20" path="res://Audios/lock.wav" id="26_w8s2k"]
+[ext_resource type="AudioStream" uid="uid://sdrtf1a0a38n" path="res://Audios/hat_select.wav" id="27_4iatv"]
+
+[sub_resource type="Curve2D" id="Curve2D_2w1uy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 39, 1, 0, 0, 0, 0, 40, 12, 0, 0, 0, 0, 46, 13, 0, 0, 0, 0, 46, 37, 0, 0, 0, 0, 39, 37, 0, 0, 0, 0, 39, 49, 0, 0, 0, 0, 45, 50, 0, 0, 0, 0, 46, 67, 0, 0, 0, 0, 9, 67, 0, 0, 0, 0, 9, 73, 0, 0, 0, 0, -3, 72, 0, 0, 0, 0, -3, 79, 0, 0, 0, 0, -21, 79, 0, 0, 0, 0, -21, 73, 0, 0, 0, 0, -32, 73, 0, 0, 0, 0, -33, 67, 0, 0, 0, 0, -39, 67, 0, 0, 0, 0, -39, 55, 0, 0, 0, 0, -34, 55, 0, 0, 0, 0, -33, 49, 0, 0, 0, 0, -27, 49, 0, 0, 0, 0, -26, 42, 0, 0, 0, 0, -16, 43, 0, 0, 0, 0, -15, 37, 0, 0, 0, 0, -4, 37, 0, 0, 0, 0, -3, 30, 0, 0, 0, 0, 3, 30, 0, 0, 0, 0, 2, 19, 0, 0, 0, 0, -21, 19, 0, 0, 0, 0, -21, 7, 0, 0, 0, 0, -15, 7, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 9, 0)
+}
+point_count = 35
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryc01"]
+size = Vector2(10.5, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu51"]
+size = Vector2(4, 7)
+
+[sub_resource type="Theme" id="Theme_phwkc"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="Theme" id="Theme_0sj7l"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wia5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8xo5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcfms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abg87"]
+
+[sub_resource type="Theme" id="Theme_4ovkj"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_720gw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twqc8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omchy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xwl62"]
+load_path = "res://.godot/imported/rock.png-1b9efb3871e49787230b0847723db884.ctex"
+
+[sub_resource type="Theme" id="Theme_s4qqg"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq00o"]
+
+[sub_resource type="Theme" id="Theme_kmam4"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63m1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1c7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swyn5"]
+
+[sub_resource type="Theme" id="Theme_dhijx"]
+default_font = ExtResource("8_2fvkg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5701"]
+shader = ExtResource("14_w3pf1")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.036
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.16
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 11.694
+shader_parameter/roll_variation = 4.351
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.085
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.1
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = true
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xs04"]
+shader = ExtResource("15_lekgd")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.127
+shader_parameter/scanlines_width = 0.24
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(320, 240)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 11.694
+shader_parameter/roll_variation = 4.189
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.155
+shader_parameter/noise_speed = 1.715
+shader_parameter/static_noise_intensity = 0.11
+shader_parameter/aberration = 0.02
+shader_parameter/brightness = 1.155
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = true
+shader_parameter/vignette_intensity = 0.435
+shader_parameter/vignette_opacity = 0.582
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_38fsu"]
+streams_count = 1
+random_pitch = 1.8
+random_volume_offset_db = 3.58
+stream_0/stream = ExtResource("15_n2o3l")
+stream_0/weight = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_350fo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_wfxku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qutbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_c4tbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8upve")
+}],
+"loop": true,
+"name": &"bounce",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+script = ExtResource("1_hpg8s")
+
+[node name="green_screen" type="Sprite2D" parent="."]
+position = Vector2(318, 239)
+scale = Vector2(36.4512, 25.4386)
+texture = ExtResource("2_paa7f")
+
+[node name="Game_state" type="Node2D" parent="."]
+visible = false
+
+[node name="Player" type="Sprite2D" parent="Game_state"]
+position = Vector2(227, 292)
+scale = Vector2(5, 5)
+texture = ExtResource("2_4lqqo")
+offset = Vector2(0.400005, -16)
+region_rect = Rect2(14.4035, 6.40505, 20.1786, 45.0787)
+
+[node name="Hat_sprite" type="Sprite2D" parent="Game_state"]
+position = Vector2(227, 292)
+scale = Vector2(5, 5)
+offset = Vector2(4.8, -27.2)
+
+[node name="Map" type="Node2D" parent="Game_state"]
+position = Vector2(523, 93)
+
+[node name="Track" type="Sprite2D" parent="Game_state/Map"]
+position = Vector2(3, 37)
+scale = Vector2(6.04441, 6.04441)
+texture = ExtResource("8_1ji2o")
+
+[node name="Path2D" type="Path2D" parent="Game_state/Map"]
+curve = SubResource("Curve2D_2w1uy")
+
+[node name="Finishing_line" type="Sprite2D" parent="Game_state/Map/Path2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1, 1)
+scale = Vector2(0.25, 0.4375)
+texture = ExtResource("9_lvsw2")
+
+[node name="enemy_pathfollow" type="PathFollow2D" parent="Game_state/Map/Path2D"]
+position = Vector2(9, 0)
+rotation = 0.033321
+
+[node name="enemy_area" type="Area2D" parent="Game_state/Map/Path2D/enemy_pathfollow"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Game_state/Map/Path2D/enemy_pathfollow/enemy_area"]
+modulate = Color(0.722656, 0.875, 0.0664063, 1)
+scale = Vector2(0.61368, 0.560635)
+texture = ExtResource("9_lvsw2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_state/Map/Path2D/enemy_pathfollow/enemy_area"]
+shape = SubResource("RectangleShape2D_ryc01")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Game_state/Map/Path2D"]
+position = Vector2(9, 0)
+rotation = 0.033321
+
+[node name="White_marker_area" type="Area2D" parent="Game_state/Map/Path2D/PathFollow2D"]
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Game_state/Map/Path2D/PathFollow2D/White_marker_area"]
+scale = Vector2(0.61368, 0.560635)
+texture = ExtResource("9_lvsw2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_state/Map/Path2D/PathFollow2D/White_marker_area"]
+shape = SubResource("RectangleShape2D_ryc01")
+
+[node name="Finish_line_area" type="Area2D" parent="Game_state/Map"]
+position = Vector2(-1, 1)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_state/Map/Finish_line_area"]
+shape = SubResource("RectangleShape2D_4pu51")
+
+[node name="Lap_placeholder" type="Control" parent="Game_state"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+theme = SubResource("Theme_phwkc")
+
+[node name="Lap_label" type="Label" parent="Game_state/Lap_placeholder"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 96.0
+offset_right = 310.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.1875, 0.382813, 0.1875, 1)
+text = "Lap"
+
+[node name="Lap_num_label" type="Label" parent="Game_state/Lap_placeholder"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 97.0
+offset_right = 354.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.72549, 0.878431, 0.0666667, 1)
+text = "1"
+
+[node name="Timer_label" type="Label" parent="Game_state/Lap_placeholder"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 97.0
+offset_right = 190.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.72549, 0.878431, 0.0666667, 1)
+text = "00:00:00"
+
+[node name="Gameboy" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(315, 252)
+scale = Vector2(5, 5)
+texture = ExtResource("1_010og")
+
+[node name="Menu_state" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_state"]
+layout_mode = 1
+offset_left = 163.0
+offset_top = 227.0
+offset_right = 299.0
+offset_bottom = 363.0
+theme = SubResource("Theme_0sj7l")
+
+[node name="Start_button" type="Button" parent="Menu_state/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit_button")
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wia5s")
+text = "Start
+"
+
+[node name="Shops_button" type="Button" parent="Menu_state/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8xo5")
+text = "Shops
+"
+
+[node name="Settings_button" type="Button" parent="Menu_state/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bcfms")
+text = "Settings
+"
+
+[node name="Quit_button" type="Button" parent="Menu_state/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Start_button")
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_abg87")
+text = "Quit
+"
+
+[node name="TextureRect" type="TextureRect" parent="Menu_state"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 140.0
+offset_bottom = 127.0
+scale = Vector2(6.48, 3.25614)
+texture = ExtResource("11_k4j2j")
+expand_mode = 2
+
+[node name="Shops_state" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_4ovkj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shops_state"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 115.0
+offset_right = 339.0
+offset_bottom = 233.0
+
+[node name="Back_shops_button" type="Button" parent="Shops_state/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.537255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_720gw")
+text = "back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shops_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "speed"
+
+[node name="Label2" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.537255, 0, 1)
+text = "(10 "
+
+[node name="Pepe_buy_button" type="Button" parent="Shops_state/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.478431, 0.478431, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twqc8")
+text = " buy "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Shops_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "turbo"
+
+[node name="Label2" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.537255, 0, 1)
+text = "(20 "
+
+[node name="Rock_buy_button" type="Button" parent="Shops_state/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.478431, 0.478431, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_omchy")
+text = " buy "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Shops_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "final"
+
+[node name="Label2" type="Label" parent="Shops_state/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.537255, 0, 1)
+text = "(30"
+
+[node name="Sonic_buy_button" type="Button" parent="Shops_state/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.478431, 0.478431, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_omchy")
+text = "  buy "
+
+[node name="Rock" type="Sprite2D" parent="Shops_state"]
+modulate = Color(0, 0, 0, 0.298039)
+position = Vector2(228, 276)
+scale = Vector2(4.12, 4.12)
+texture = SubResource("CompressedTexture2D_xwl62")
+region_enabled = true
+region_rect = Rect2(14.2143, 17.0126, 16.6211, 21.4453)
+
+[node name="Sonic" type="Sprite2D" parent="Shops_state"]
+modulate = Color(0, 0, 0, 0.137255)
+position = Vector2(304, 259)
+rotation = -1.55412
+scale = Vector2(2.76056, 2.76056)
+texture = ExtResource("8_83nnf")
+
+[node name="Pepe" type="Sprite2D" parent="Shops_state"]
+modulate = Color(0, 0, 0, 0.254902)
+position = Vector2(161, 258)
+scale = Vector2(3.92, 3.92)
+texture = ExtResource("14_0kh6m")
+
+[node name="Settings_state" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s4qqg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings_state"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 123.0
+offset_right = 306.0
+offset_bottom = 226.0
+
+[node name="Back_Settings_button" type="Button" parent="Settings_state/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.537255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cq00o")
+text = "Back
+"
+
+[node name="Shader_container" type="HBoxContainer" parent="Settings_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Shader_label" type="Label" parent="Settings_state/VBoxContainer/Shader_container"]
+layout_mode = 2
+text = "Shader"
+
+[node name="Shader_checkbutton" type="CheckButton" parent="Settings_state/VBoxContainer/Shader_container"]
+layout_mode = 2
+button_pressed = true
+
+[node name="Music_volume_container" type="VBoxContainer" parent="Settings_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music_volume_label" type="Label" parent="Settings_state/VBoxContainer/Music_volume_container"]
+layout_mode = 2
+text = "
+Music
+"
+
+[node name="Volume_slider" parent="Settings_state/VBoxContainer/Music_volume_container" instance=ExtResource("13_c5q7b")]
+layout_mode = 2
+step = 0.1
+value = 0.7
+bus_name = "Music"
+
+[node name="Sfx_volume_container" type="VBoxContainer" parent="Settings_state/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sfx_volume_label" type="Label" parent="Settings_state/VBoxContainer/Sfx_volume_container"]
+layout_mode = 2
+text = "VFx"
+
+[node name="Volume_slider" parent="Settings_state/VBoxContainer/Sfx_volume_container" instance=ExtResource("13_c5q7b")]
+layout_mode = 2
+step = 0.1
+value = 0.7
+bus_name = "Sfx"
+
+[node name="Result_state" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_kmam4")
+
+[node name="Result_textureRect" type="TextureRect" parent="Result_state"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 89.0
+offset_right = 357.0
+offset_bottom = 218.0
+texture = ExtResource("17_j4h34")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Result_state"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 224.0
+offset_right = 289.0
+offset_bottom = 264.0
+
+[node name="Restart_button" type="Button" parent="Result_state/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Menu_button")
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_63m1p")
+text = "restart"
+
+[node name="Shop_button" type="Button" parent="Result_state/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lm1c7")
+text = "shop"
+
+[node name="Menu_button" type="Button" parent="Result_state/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Restart_button")
+theme_override_colors/font_focus_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_swyn5")
+text = "menu"
+
+[node name="Thanks_state" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_dhijx")
+
+[node name="TextureRect" type="TextureRect" parent="Thanks_state"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 91.0
+offset_right = 157.0
+offset_bottom = 131.0
+scale = Vector2(4.92, 3.2)
+texture = ExtResource("12_xcagl")
+
+[node name="TextureRect2" type="TextureRect" parent="Thanks_state"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 221.0
+offset_right = 343.0
+offset_bottom = 318.0
+texture = ExtResource("13_ehtoi")
+
+[node name="TextureRect3" type="TextureRect" parent="Thanks_state"]
+layout_mode = 0
+offset_left = 621.0
+offset_top = -1.0
+offset_right = 669.0
+offset_bottom = 51.0
+scale = Vector2(-4.36, 4.52)
+texture = ExtResource("14_0kh6m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_q5701")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = -270.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_4xs04")
+offset_left = 470.0
+offset_top = 82.0
+offset_right = 585.0
+offset_bottom = 182.0
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Button_select_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_fex6t")
+volume_db = -13.409
+bus = &"Sfx"
+
+[node name="Button_focus_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_wvxyw")
+volume_db = -4.772
+bus = &"Sfx"
+
+[node name="Button_click_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = SubResource("AudioStreamRandomizer_38fsu")
+volume_db = 4.5
+pitch_scale = 1.54
+autoplay = true
+bus = &"Sfx"
+
+[node name="Game_music_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_bimdp")
+volume_db = -14.855
+autoplay = true
+bus = &"Music"
+
+[node name="Countdown_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_qltv4")
+bus = &"Sfx"
+
+[node name="win_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("22_ue8ho")
+volume_db = 10.182
+autoplay = true
+bus = &"Sfx"
+
+[node name="lose_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("23_5xktr")
+volume_db = -9.715
+autoplay = true
+bus = &"Sfx"
+
+[node name="sonic_music_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_eqj5o")
+volume_db = 1.455
+autoplay = true
+bus = &"Music"
+
+[node name="thank_you_music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("22_dto60")
+volume_db = 1.455
+autoplay = true
+bus = &"Music"
+
+[node name="lap_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("24_7id2a")
+autoplay = true
+bus = &"Sfx"
+
+[node name="lock_audio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("26_w8s2k")
+bus = &"Sfx"
+
+[node name="lock_audio2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_4iatv")
+bus = &"Sfx"
+
+[node name="Coin" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Coin"]
+offset_left = 490.0
+offset_top = 90.0
+offset_right = 570.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0, 1)
+theme_override_fonts/font = ExtResource("8_2fvkg")
+text = "Coins"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin"]
+position = Vector2(505, 141)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_350fo")
+animation = &"bounce"
+autoplay = "bounce"
+frame_progress = 0.810102
+
+[node name="coin_label" type="Label" parent="Coin"]
+offset_left = 531.0
+offset_top = 123.0
+offset_right = 571.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("8_2fvkg")
+theme_override_font_sizes/font_size = 27
+text = "0"
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light"]
+color = Color(0.615686, 0.615686, 0.615686, 1)
+energy = 0.7
+blend_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+position = Vector2(236, 208)
+color = Color(0.389205, 0.747291, 0, 1)
+energy = 1.75
+texture = ExtResource("22_r0xbo")
+texture_scale = 0.74
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light"]
+position = Vector2(529, 142)
+color = Color(0.389205, 0.747291, 0, 1)
+energy = 0.85
+texture = ExtResource("22_r0xbo")
+texture_scale = 0.5
+
+[node name="Buttons" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button_A" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 278.0
+offset_right = 527.0
+offset_bottom = 356.0
+toggle_mode = true
+texture_normal = ExtResource("3_nts3u")
+texture_pressed = ExtResource("4_8aosj")
+stretch_mode = 0
+
+[node name="Button_B" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 221.0
+offset_right = 587.0
+offset_bottom = 297.0
+toggle_mode = true
+texture_normal = ExtResource("5_5noeo")
+texture_pressed = ExtResource("6_ko47y")
+stretch_mode = 0
+
+[connection signal="area_entered" from="Game_state/Map/Path2D/enemy_pathfollow/enemy_area" to="." method="_on_enemy_area_area_entered"]
+[connection signal="area_entered" from="Game_state/Map/Path2D/PathFollow2D/White_marker_area" to="." method="_on_white_marker_area_area_entered"]
+[connection signal="focus_entered" from="Menu_state/VBoxContainer/Start_button" to="." method="_on_start_button_focus_entered"]
+[connection signal="pressed" from="Menu_state/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="focus_entered" from="Menu_state/VBoxContainer/Shops_button" to="." method="_on_shops_button_focus_entered"]
+[connection signal="pressed" from="Menu_state/VBoxContainer/Shops_button" to="." method="_on_shops_button_pressed"]
+[connection signal="focus_entered" from="Menu_state/VBoxContainer/Settings_button" to="." method="_on_settings_button_focus_entered"]
+[connection signal="pressed" from="Menu_state/VBoxContainer/Settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="focus_entered" from="Menu_state/VBoxContainer/Quit_button" to="." method="_on_quit_button_focus_entered"]
+[connection signal="pressed" from="Menu_state/VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Shops_state/VBoxContainer/Back_shops_button" to="." method="_on_back_shops_button_pressed"]
+[connection signal="focus_entered" from="Shops_state/VBoxContainer/HBoxContainer/Pepe_buy_button" to="." method="_on_pepe_buy_button_focus_entered"]
+[connection signal="pressed" from="Shops_state/VBoxContainer/HBoxContainer/Pepe_buy_button" to="." method="_on_pepe_buy_button_pressed"]
+[connection signal="focus_entered" from="Shops_state/VBoxContainer/HBoxContainer2/Rock_buy_button" to="." method="_on_rock_buy_button_focus_entered"]
+[connection signal="pressed" from="Shops_state/VBoxContainer/HBoxContainer2/Rock_buy_button" to="." method="_on_rock_buy_button_pressed"]
+[connection signal="focus_entered" from="Shops_state/VBoxContainer/HBoxContainer3/Sonic_buy_button" to="." method="_on_sonic_buy_button_focus_entered"]
+[connection signal="pressed" from="Shops_state/VBoxContainer/HBoxContainer3/Sonic_buy_button" to="." method="_on_sonic_buy_button_pressed"]
+[connection signal="focus_entered" from="Settings_state/VBoxContainer/Back_Settings_button" to="." method="_on_back_settings_button_focus_entered"]
+[connection signal="pressed" from="Settings_state/VBoxContainer/Back_Settings_button" to="." method="_on_back_settings_button_pressed"]
+[connection signal="focus_entered" from="Settings_state/VBoxContainer/Shader_container/Shader_checkbutton" to="." method="_on_shader_checkbutton_focus_entered"]
+[connection signal="toggled" from="Settings_state/VBoxContainer/Shader_container/Shader_checkbutton" to="." method="_on_shader_checkbutton_toggled"]
+[connection signal="focus_entered" from="Settings_state/VBoxContainer/Music_volume_container/Volume_slider" to="." method="_on_volume_slider_focus_entered"]
+[connection signal="focus_entered" from="Settings_state/VBoxContainer/Sfx_volume_container/Volume_slider" to="." method="_on_volume_slider_focus_entered"]
+[connection signal="focus_entered" from="Result_state/VBoxContainer/Restart_button" to="." method="_on_restart_button_focus_entered"]
+[connection signal="pressed" from="Result_state/VBoxContainer/Restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="focus_entered" from="Result_state/VBoxContainer/Shop_button" to="." method="_on_shop_button_focus_entered"]
+[connection signal="pressed" from="Result_state/VBoxContainer/Shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="focus_entered" from="Result_state/VBoxContainer/Menu_button" to="." method="_on_menu_button_focus_entered"]
+[connection signal="pressed" from="Result_state/VBoxContainer/Menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="finished" from="Audio/Game_music_audio" to="." method="_on_game_music_audio_finished"]
+[connection signal="pressed" from="Buttons/Button_A" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="Buttons/Button_B" to="." method="_on_button_b_pressed"]
